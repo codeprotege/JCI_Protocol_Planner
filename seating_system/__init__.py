@@ -1,0 +1,1 @@
+"""Seating protocol package."""

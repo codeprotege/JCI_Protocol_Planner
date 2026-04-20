@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JCI Protocol Seating Desk</title>
+    <meta
+      name="description"
+      content="Ground-up rebuilt JCI protocol seating desk for roster intake, priority review, and ceremonial seat planning."
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="grid-backdrop"></div>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <h1 data-i18n="heroTitle">JCI Protocol Seating Desk</h1>
+        </div>
+        <div class="hero-actions">
+          <button id="languageToggle" class="ghost-btn" type="button">繁中</button>
+          <button id="themeToggle" class="ghost-btn" type="button">Dark theme</button>
+          <a id="loadRecognitionButton" class="ghost-btn" href="./recognition.html" data-i18n="buttonRecognitionOnly">Recognition only</a>
+          <button id="loadSampleButton" class="ghost-btn" type="button" data-i18n="buttonSampleRoster">Sample roster</button>
+          <button id="arrangeButton" class="primary-btn" type="button" data-i18n="buttonPreviewSamplePlan">Preview sample plan</button>
+        </div>
+      </header>
+
+      <section class="layout">
+        <section class="panel plan-panel panel--primary">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="sectionTop">Top Section</p>
+              <h2 data-i18n="currentSeatingPlan">Current seating plan</h2>
+            </div>
+            <div class="plan-head-actions">
+              <div class="plan-head-button-row">
+                <button id="sampleModeToggle" class="ghost-btn sample-toggle" type="button">Sample mode on</button>
+                <button id="clearRosterButton" class="ghost-btn sample-toggle" type="button" data-i18n="buttonClearRoster">Clear roster</button>
+              </div>
+              <p id="planStatus" class="panel-note"></p>
+            </div>
+          </div>
+
+          <div class="plan-panel-top">
+            <section class="module control-module">
+              <div class="module-head">
+                <h3 data-i18n="planControls">Plan controls</h3>
+              </div>
+              <div class="slider-group">
+                <label class="slider-field" for="scenarioSelect">
+                  <span data-i18n="controlScenario">Scenario</span>
+                  <strong id="scenarioValue">Photo taking</strong>
+                </label>
+                <select id="scenarioSelect" class="scenario-select">
+                  <option value="photo" data-i18n="scenarioPhotoLabel">Photo taking</option>
+                  <option value="circular" data-i18n="scenarioCircularLabel">Circular table</option>
+                  <option value="long" data-i18n="scenarioLongLabel">Long table</option>
+                </select>
+              </div>
+              <div class="slider-group">
+                <label class="slider-field" for="anchorPersonSelect">
+                  <span data-i18n="controlAnchorPerson">Anchor person</span>
+                  <strong id="anchorPersonValue">Auto</strong>
+                </label>
+                <select id="anchorPersonSelect" class="scenario-select">
+                  <option value="auto">Auto</option>
+                </select>
+              </div>
+              <div id="photoOrientationControl" class="slider-group">
+                <label class="slider-field" for="photoOrientationToggle">
+                  <span data-i18n="controlPhotoView">Photo view</span>
+                  <strong id="photoOrientationValue">Facing audience</strong>
+                </label>
+                <button id="photoOrientationToggle" class="ghost-btn" type="button">Facing audience</button>
+              </div>
+              <div class="slider-group">
+                <label class="slider-field" for="seatCountRange">
+                  <span data-i18n="controlSeatsInPlan">Seats in plan</span>
+                  <strong id="seatCountValue">7</strong>
+                </label>
+                <input id="seatCountRange" class="range-input" type="range" min="1" max="200" step="1" value="7" />
+              </div>
+              <div id="tableCountControl" class="slider-group" hidden>
+                <label class="slider-field" for="tableCountRange">
+                  <span id="tableCountLabel">Tables</span>
+                  <strong id="tableCountValue">1</strong>
+                </label>
+                <input id="tableCountRange" class="range-input" type="range" min="1" max="6" step="1" value="1" />
+              </div>
+            </section>
+
+            <section class="module plan-legend-module">
+              <div class="module-head">
+                <h3 data-i18n="squareLegend">Square legend</h3>
+              </div>
+              <div class="plan-legend">
+                <div class="legend-chip">
+                  <span class="legend-square legend-square--anchor"></span>
+                  <small data-i18n="legendHeadSeat">Head seat</small>
+                </div>
+                <div class="legend-chip">
+                  <span class="legend-square"></span>
+                  <small data-i18n="legendSeated">Seated</small>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <section class="stage-shell">
+            <div class="stage-shell-head">
+              <div>
+                <p class="eyebrow" data-i18n="visualPlan">Visual Plan</p>
+                <h3 id="scenarioTitle">Centered photo lineup</h3>
+              </div>
+              <p id="scenarioCopy" class="panel-note"></p>
+            </div>
+            <div id="centerSeatPlan" class="center-plan-grid"></div>
+          </section>
+        </section>
+
+        <section class="panel intake-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="inputSection">Input</p>
+              <h2 data-i18n="rosterIntake">Roster intake</h2>
+            </div>
+            <div class="plan-head-actions">
+              <button id="submitRosterButton" class="primary-btn sample-toggle" type="button" data-i18n="buttonSubmitRoster">Submit roster</button>
+              <p id="inputStatus" class="panel-note"></p>
+            </div>
+          </div>
+
+          <div class="panel-grid">
+            <section class="module">
+              <div class="module-head">
+                <h3 data-i18n="manualRows">Manual rows</h3>
+                <button id="addRowButton" class="ghost-btn" type="button" data-i18n="buttonAddRow">Add row</button>
+              </div>
+              <div id="manualRows" class="manual-rows"></div>
+            </section>
+
+            <section class="module">
+              <div class="module-head">
+                <h3 data-i18n="importSection">Import</h3>
+              </div>
+              <label class="field">
+                <span data-i18n="uploadCsvJson">Upload CSV or JSON</span>
+                <input id="fileInput" type="file" accept=".csv,.json,application/json,text/csv" />
+              </label>
+              <label class="field">
+                <span data-i18n="pasteCsvJson">Paste CSV or JSON</span>
+                <textarea id="textInput" rows="11" data-i18n-placeholder="rosterPlaceholder" placeholder="name,title,organization&#10;Chan Tai Man,Guest,JCI Hong Kong"></textarea>
+              </label>
+            </section>
+          </div>
+
+          <section class="module rule-module">
+            <div class="module-head">
+              <h3 data-i18n="priorityStack">Priority stack</h3>
+            </div>
+            <ol class="rule-list">
+              <li data-i18n="category.hk_gov">HK Gov</li>
+              <li data-i18n="category.goh">GOH</li>
+              <li data-i18n="category.sponsor">Sponsor</li>
+              <li data-i18n="category.jci">JCI</li>
+              <li data-i18n="category.jci_hk_national">JCI HK (National)</li>
+              <li data-i18n="category.sister_chapter">Sister Chapter of JCI HK (local Chapter)</li>
+              <li data-i18n="category.jci_hk_local">JCI HK (local Chapter)</li>
+            </ol>
+          </section>
+        </section>
+
+        <section class="panel output-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="outputSection">Output</p>
+              <h2 data-i18n="detailedOrder">Detailed order</h2>
+            </div>
+            <p id="outputStatus" class="panel-note"></p>
+          </div>
+
+          <div id="summaryBoard" class="summary-board"></div>
+
+          <div class="core-layout">
+            <div id="seatMap" class="seat-map"></div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="result-table">
+              <thead>
+                <tr>
+                  <th data-i18n="tableSeat">Seat</th>
+                  <th data-i18n="tableName">Name</th>
+                  <th data-i18n="tableTitle">Title</th>
+                  <th data-i18n="tableOrganization">Organization</th>
+                  <th data-i18n="tableCategory">Category</th>
+                </tr>
+              </thead>
+              <tbody id="resultBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JCI Recognition List</title>
+    <meta
+      name="description"
+      content="Recognition-list view for the rebuilt JCI protocol seating desk."
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="grid-backdrop"></div>
+    <main class="shell shell--recognition">
+      <header class="hero hero--recognition">
+        <div>
+          <p class="eyebrow" data-i18n="recognitionEyebrow">Recognition List</p>
+          <h1 data-i18n="recognitionPageTitle">Recognition list desk</h1>
+        </div>
+        <div class="hero-actions">
+          <button id="languageToggle" class="ghost-btn" type="button">繁中</button>
+          <button id="themeToggle" class="ghost-btn" type="button">Dark theme</button>
+          <button id="recognitionSampleModeToggle" class="ghost-btn" type="button">Sample mode on</button>
+          <a id="backToAppButton" class="primary-btn" href="./index.html" data-i18n="buttonBackToPlanner">Back to planner</a>
+        </div>
+      </header>
+
+      <section class="layout">
+        <section class="panel panel--primary recognition-page-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="recognitionEyebrow">Recognition List</p>
+              <h2 data-i18n="recognitionPanelTitle">Recognition list</h2>
+            </div>
+            <p id="recognitionStatus" class="panel-note"></p>
+          </div>
+
+          <div class="recognition-page-grid">
+            <section class="module">
+              <div class="module-head">
+                <h3 data-i18n="recognitionModeTitle">Source mode</h3>
+              </div>
+              <div class="slider-group">
+                <label class="slider-field" for="recognitionSampleModeToggle">
+                  <span data-i18n="recognitionModeLabel">Recognition source</span>
+                  <strong id="recognitionModeValue">Sample mode on</strong>
+                </label>
+                <button id="recognitionModeInlineToggle" class="ghost-btn" type="button">Sample mode on</button>
+              </div>
+              <div class="slider-group">
+                <label class="slider-field" for="recognitionCountValue">
+                  <span data-i18n="recognitionMatchedLabel">Recognition entries</span>
+                  <strong id="recognitionCountValue">0</strong>
+                </label>
+              </div>
+            </section>
+
+            <section class="module">
+              <div class="module-head">
+                <h3 data-i18n="recognitionSourceTitle">Current source</h3>
+              </div>
+              <div class="recognition-source-card">
+                <strong id="recognitionSourceTitleText">Sample recognition list</strong>
+                <p id="recognitionSourceCopy" class="panel-note"></p>
+              </div>
+            </section>
+          </div>
+
+          <div id="recognitionSummaryBoard" class="summary-board"></div>
+
+          <div id="recognitionSeatMap" class="seat-map recognition-seat-map"></div>
+
+          <div class="table-wrap">
+            <table class="result-table">
+              <thead>
+                <tr>
+                  <th data-i18n="recognitionRank">Recognition</th>
+                  <th data-i18n="tableName">Name</th>
+                  <th data-i18n="tableTitle">Title</th>
+                  <th data-i18n="tableOrganization">Organization</th>
+                  <th data-i18n="tableCategory">Category</th>
+                </tr>
+              </thead>
+              <tbody id="recognitionResultBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./recognition.js"></script>
+  </body>
+</html>

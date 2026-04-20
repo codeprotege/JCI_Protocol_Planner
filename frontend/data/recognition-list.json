@@ -1,0 +1,774 @@
+{
+  "meta": {
+    "source": "JCIHK_Recognition_List_2026",
+    "source_file": "dlwid_3778_dlwlistid_5244.docx",
+    "count": 85
+  },
+  "entries": [
+    {
+      "id": "jci-hk-1",
+      "number": 1,
+      "name": "Senator Daryl Lin",
+      "title": "National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-2",
+      "number": 2,
+      "name": "Senator Rafael Wong",
+      "title": "JCI IT and Innovation Commission Chairperson, Senate Chairman and National Immediate Past President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-3",
+      "number": 3,
+      "name": "Senator Jennifer Yu",
+      "title": "1988 JCI President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-4",
+      "number": 4,
+      "name": "Senator Sonny Yu",
+      "title": "JCI Honorary Advisor and 1979 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-5",
+      "number": 5,
+      "name": "Senator Eric Tang",
+      "title": "JCI Advisory Board Chairperson, and 2008 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-6",
+      "number": 6,
+      "name": "Senator Ben Mak",
+      "title": "JCI Executive Vice President and 2024 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-7",
+      "number": 7,
+      "name": "Senator Dr James Tsui, MH",
+      "title": "JCI Foundation Director, National Panel of Advisors and 2006 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-8",
+      "number": 8,
+      "name": "Rycho Cheuk",
+      "title": "JCI Women in Leadership Commission Deputy Chairperson and National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-9",
+      "number": 9,
+      "name": "Senator Mic Hon",
+      "title": "JCI Foundation Committee Member (Asia and the Pacific)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-10",
+      "number": 10,
+      "name": "Senator Howard Sze",
+      "title": "JCI Human Duties Implementation Committee Member (Asia and the Pacific)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-11",
+      "number": 11,
+      "name": "Senator Evan Leung",
+      "title": "JCI Marketing Committee Member (Asia and the Pacific)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-12",
+      "number": 12,
+      "name": "Senator Michele Lau",
+      "title": "JCI Sustainability Committee Member (Asia and the Pacific)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-13",
+      "number": 13,
+      "name": "Senator Licca Chan",
+      "title": "JCI Asia Pacific Senate Secretary General",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-14",
+      "number": 14,
+      "name": "Senator Paul Wu",
+      "title": "JCI Asia Pacific Senate Director, HKJC Foundation Chairman and 2013 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-15",
+      "number": 15,
+      "name": "Senator Vincy Wong",
+      "title": "JCI Asia Pacific Development Council Councilor",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-16",
+      "number": 16,
+      "name": "Senator Teresa Poon",
+      "title": "National Presidential Advisor and 2017 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-17",
+      "number": 17,
+      "name": "Senator Paul Yin, SBS, JP",
+      "title": "National Panel of Advisors and 1976 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-18",
+      "number": 18,
+      "name": "Senator Major Tang",
+      "title": "National Panel of Advisors and 1980 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-19",
+      "number": 19,
+      "name": "Senator Daniel Cham, BBS, MH, BH, JP",
+      "title": "National Panel of Advisors and 1991 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-20",
+      "number": 20,
+      "name": "Senator George Lung, SBS, MH, JP",
+      "title": "National Panel of Advisors and 1993 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-21",
+      "number": 21,
+      "name": "Senator John Chan",
+      "title": "Ten Outstanding Young Persons Selection Steering Committee Chairman and 1984 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-22",
+      "number": 22,
+      "name": "Senator Johnny Kwan",
+      "title": "Strategic Planning Committee Chairman and 2014 National President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-23",
+      "number": 23,
+      "name": "Senator Irene Lam",
+      "title": "National Alumni Club Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-24",
+      "number": 24,
+      "name": "Senator Priscilla Tso",
+      "title": "National General Legal Counsel",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-25",
+      "number": 25,
+      "name": "Senator Calvin Chan",
+      "title": "National Executive Vice President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-26",
+      "number": 26,
+      "name": "Christy Chan",
+      "title": "National Executive Vice President",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-27",
+      "number": 27,
+      "name": "Senator Hob Lau",
+      "title": "National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-28",
+      "number": 28,
+      "name": "Senator Dara Sum",
+      "title": "National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-29",
+      "number": 29,
+      "name": "Senator Yannes Wong",
+      "title": "National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-30",
+      "number": 30,
+      "name": "Jenny Fong",
+      "title": "National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-31",
+      "number": 31,
+      "name": "Dickson Kwok",
+      "title": "National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-32",
+      "number": 32,
+      "name": "Bosco Li",
+      "title": "National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-33",
+      "number": 33,
+      "name": "Dickey Tang",
+      "title": "National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-34",
+      "number": 34,
+      "name": "Theresa Wong",
+      "title": "National Vice President (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-35",
+      "number": 35,
+      "name": "Senator Hei Leung",
+      "title": "National Secretary General (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-36",
+      "number": 36,
+      "name": "Tiffany Leung",
+      "title": "National Honorary Treasurer (National Assigned Executive Officer)",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-37",
+      "number": 37,
+      "name": "Kenneth Law",
+      "title": "National Digital Development Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-38",
+      "number": 38,
+      "name": "Oscar Ip",
+      "title": "National Economic Development Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-39",
+      "number": 39,
+      "name": "Priscilla Yip",
+      "title": "National Global Affairs Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-40",
+      "number": 40,
+      "name": "Francis Leung",
+      "title": "National International Affairs Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-41",
+      "number": 41,
+      "name": "Lara Lee",
+      "title": "National Leadership Development Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-42",
+      "number": 42,
+      "name": "Marc Au Yeung",
+      "title": "National Mainland Affairs Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-43",
+      "number": 43,
+      "name": "Cherry Lok",
+      "title": "National Membership Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-44",
+      "number": 44,
+      "name": "Katrina Ng",
+      "title": "National Partnership and Public Relations Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-45",
+      "number": 45,
+      "name": "Fiona Lam",
+      "title": "National Records & Recognition Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-46",
+      "number": 46,
+      "name": "Kiki Chan",
+      "title": "National Youth and Community Affairs Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-47",
+      "number": 47,
+      "name": "Gilbert Lo",
+      "title": "National Digital Development Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-48",
+      "number": 48,
+      "name": "Senator Yukki Wong",
+      "title": "National Foreign Affairs Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-49",
+      "number": 49,
+      "name": "Steven Chow",
+      "title": "National International Affairs Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-50",
+      "number": 50,
+      "name": "Huey Shum",
+      "title": "National JCI In Business Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-51",
+      "number": 51,
+      "name": "Tivon Yiu",
+      "title": "National Mainland Affairs Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-52",
+      "number": 52,
+      "name": "Michelle Yu",
+      "title": "National Membership Development Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-53",
+      "number": 53,
+      "name": "Jay Lee",
+      "title": "National Membership Extension Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-54",
+      "number": 54,
+      "name": "Shirley Tsang",
+      "title": "National Partnership and Sponsorship Affairs Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-55",
+      "number": 55,
+      "name": "Jacky Wong",
+      "title": "National Publication Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-56",
+      "number": 56,
+      "name": "Randy Lee",
+      "title": "National Training and Development Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-57",
+      "number": 57,
+      "name": "Tiara Lau",
+      "title": "National Youth and Community Affairs Commission Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-58",
+      "number": 58,
+      "name": "Senator Kendrick Yuen",
+      "title": "2026 Asia-Pacific Youth Micro Movie Festival Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-59",
+      "number": 59,
+      "name": "Senator Carol Wong",
+      "title": "2026 Ten Outstanding Young Persons Selection Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-60",
+      "number": 60,
+      "name": "Senator Dixon Kwok",
+      "title": "The 61st JCIHK National Convention Director",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-61",
+      "number": 61,
+      "name": "Senator Vincent Pang",
+      "title": "2026 JCIHK Inaugural Ceremony Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-62",
+      "number": 62,
+      "name": "Agnes Mak",
+      "title": "2026 Creative Young Entrepreneur Competition Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-63",
+      "number": 63,
+      "name": "Ecquinne Yu",
+      "title": "2026 JCIHK On-To ASPAC Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-64",
+      "number": 64,
+      "name": "Pong Tong",
+      "title": "2026 ASPAC Hong Kong Night Chairman",
+      "organization": "JCI HK",
+      "layer": "national",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-65",
+      "number": 65,
+      "name": "Zico Sit",
+      "title": "JCI Victoria President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-66",
+      "number": 66,
+      "name": "Venus Tam",
+      "title": "JCI Kowloon President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-67",
+      "number": 67,
+      "name": "Ivan Yim",
+      "title": "JCI Island President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-68",
+      "number": 68,
+      "name": "Irene Leung",
+      "title": "JCI Peninsula President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-69",
+      "number": 69,
+      "name": "Connie Kwan",
+      "title": "JCI Hong Kong Jayceettes President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-70",
+      "number": 70,
+      "name": "Emily Ng",
+      "title": "JCI Lion Rock President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-71",
+      "number": 71,
+      "name": "William Chan",
+      "title": "JCI Harbour President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-72",
+      "number": 72,
+      "name": "Cedric Leung",
+      "title": "JCI Yuen Long President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-73",
+      "number": 73,
+      "name": "Janet Wong",
+      "title": "JCI Tai Ping Shan President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-74",
+      "number": 74,
+      "name": "Suki Tang",
+      "title": "JCI Bauhinia President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-75",
+      "number": 75,
+      "name": "Jason Chan",
+      "title": "JCI Dragon President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-76",
+      "number": 76,
+      "name": "Kuri Wong",
+      "title": "JCI East Kowloon President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-77",
+      "number": 77,
+      "name": "Kenny Lee",
+      "title": "JCI City President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-78",
+      "number": 78,
+      "name": "Kelvin Cheung",
+      "title": "JCI Queensway President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-79",
+      "number": 79,
+      "name": "Annie Lee",
+      "title": "JCI North District President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-80",
+      "number": 80,
+      "name": "Vincent Pang",
+      "title": "JCI Ocean President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-81",
+      "number": 81,
+      "name": "Yannes Yam",
+      "title": "JCI Sha Tin President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-82",
+      "number": 82,
+      "name": "Crystal Tsang",
+      "title": "JCI Apex President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-83",
+      "number": 83,
+      "name": "Rainbow Yeung",
+      "title": "JCI City Lady President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-84",
+      "number": 84,
+      "name": "Gilbert Sun",
+      "title": "JCI Tsuen Wan President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    },
+    {
+      "id": "jci-hk-85",
+      "number": 85,
+      "name": "Amy Li",
+      "title": "JCI Lantau President",
+      "organization": "JCI HK",
+      "layer": "local_chapter",
+      "source": "recognition_list"
+    }
+  ]
+}

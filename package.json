@@ -1,0 +1,10 @@
+{
+  "name": "jci-seating-protocol-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "test:logic": "node tests/logic.test.mjs"
+  }
+}
