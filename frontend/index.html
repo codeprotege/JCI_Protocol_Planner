@@ -75,6 +75,13 @@
                 <button id="photoOrientationToggle" class="ghost-btn" type="button">Facing audience</button>
               </div>
               <div class="slider-group">
+                <label class="slider-field" for="planLayoutToggle">
+                  <span data-i18n="controlPlanLayout">Plan layout</span>
+                  <strong id="planLayoutValue">Horizontal</strong>
+                </label>
+                <button id="planLayoutToggle" class="ghost-btn" type="button">Horizontal</button>
+              </div>
+              <div class="slider-group">
                 <label class="slider-field" for="seatCountRange">
                   <span data-i18n="controlSeatsInPlan">Seats in plan</span>
                   <strong id="seatCountValue">7</strong>
@@ -107,7 +114,7 @@
             </section>
           </div>
 
-          <section class="stage-shell">
+          <section id="stageShell" class="stage-shell">
             <div class="stage-shell-head">
               <div>
                 <p class="eyebrow" data-i18n="visualPlan">Visual Plan</p>

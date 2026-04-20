@@ -16,6 +16,7 @@ const state = {
   sampleMode: true,
   anchorSelection: "auto",
   photoOrientation: "facing_audience",
+  planLayout: "horizontal",
 };
 
 const TABLE_SCENARIOS = new Set(["circular", "long"]);
@@ -61,8 +62,11 @@ const tableCountLabel = document.getElementById("tableCountLabel");
 const photoOrientationControl = document.getElementById("photoOrientationControl");
 const photoOrientationToggle = document.getElementById("photoOrientationToggle");
 const photoOrientationValue = document.getElementById("photoOrientationValue");
+const planLayoutToggle = document.getElementById("planLayoutToggle");
+const planLayoutValue = document.getElementById("planLayoutValue");
 const anchorPersonSelect = document.getElementById("anchorPersonSelect");
 const anchorPersonValue = document.getElementById("anchorPersonValue");
+const stageShell = document.getElementById("stageShell");
 const centerSeatPlan = document.getElementById("centerSeatPlan");
 const scenarioSelect = document.getElementById("scenarioSelect");
 const scenarioValue = document.getElementById("scenarioValue");
@@ -95,6 +99,7 @@ const TRANSLATIONS = {
     controlScenario: "Scenario",
     controlAnchorPerson: "Anchor person",
     controlPhotoView: "Photo view",
+    controlPlanLayout: "Plan layout",
     controlSeatsInPlan: "Seats in plan",
     controlTablesRound: "Round tables",
     controlTablesLong: "Long tables",
@@ -211,6 +216,16 @@ const TRANSLATIONS = {
         description: "Mirrored as viewed from the audience side while facing the stage.",
       },
     },
+    planLayoutMeta: {
+      horizontal: {
+        label: "Horizontal",
+        description: "Spreads the protocol plan across the section width.",
+      },
+      vertical: {
+        label: "Vertical",
+        description: "Stacks the protocol plan top-to-bottom to keep the whole view visible.",
+      },
+    },
   },
   zhHant: {
     documentTitle: "JCI 禮賓座位編排系統",
@@ -235,6 +250,7 @@ const TRANSLATIONS = {
     controlScenario: "情境",
     controlAnchorPerson: "錨點人物",
     controlPhotoView: "合照視角",
+    controlPlanLayout: "座位圖方向",
     controlSeatsInPlan: "顯示座位數",
     controlTablesRound: "圓桌數量",
     controlTablesLong: "長桌數量",
@@ -351,6 +367,16 @@ const TRANSLATIONS = {
         description: "以觀眾望向舞台的視角鏡像顯示隊形。",
       },
     },
+    planLayoutMeta: {
+      horizontal: {
+        label: "橫向",
+        description: "沿區域闊度展開座位圖。",
+      },
+      vertical: {
+        label: "縱向",
+        description: "以上下堆疊方式顯示，較容易完整看到全圖。",
+      },
+    },
   },
 };
 
@@ -396,6 +422,10 @@ function getScenarioMeta(scenario = state.scenario) {
 
 function getPhotoOrientationMeta(orientation = state.photoOrientation) {
   return getLocale().photoOrientationMeta[orientation] || TRANSLATIONS.en.photoOrientationMeta[orientation];
+}
+
+function getPlanLayoutMeta(layout = state.planLayout) {
+  return getLocale().planLayoutMeta[layout] || TRANSLATIONS.en.planLayoutMeta[layout];
 }
 
 function readStorageJson(key) {
@@ -530,6 +560,7 @@ function persistAppState() {
     sampleMode: state.sampleMode,
     anchorSelection: state.anchorSelection,
     photoOrientation: state.photoOrientation,
+    planLayout: state.planLayout,
     seatCount: Number(seatCountRange.value) || 1,
     tableCount: Number(tableCountRange.value) || 1,
     rows: collectDraftRows(),
@@ -561,6 +592,9 @@ function applyStoredAppState() {
   }
   if (["facing_audience", "from_audience"].includes(stored.photoOrientation)) {
     state.photoOrientation = stored.photoOrientation;
+  }
+  if (["horizontal", "vertical"].includes(stored.planLayout)) {
+    state.planLayout = stored.planLayout;
   }
 
   const storedSeatCount = Math.max(1, Math.min(Number(seatCountRange.max) || 200, Number(stored.seatCount) || 1));
@@ -975,6 +1009,13 @@ function syncPhotoOrientationControl() {
   photoOrientationValue.textContent = orientation.label;
 }
 
+function syncPlanLayoutControl() {
+  const layout = getPlanLayoutMeta();
+  planLayoutToggle.textContent = layout.label;
+  planLayoutValue.textContent = layout.label;
+  stageShell?.classList.toggle("stage-shell--vertical", state.planLayout === "vertical");
+}
+
 function clearCurrentRosterState() {
   resetRows([]);
   textInput.value = "";
@@ -1005,6 +1046,7 @@ function renderCurrentPlan(plan) {
     seatCountValue.textContent = seatCountRange.value;
     tableCountControl.hidden = !isTableScenario();
     syncPhotoOrientationControl();
+    syncPlanLayoutControl();
     tableCountLabel.textContent = getTableLabel();
     tableCountValue.textContent = tableCountRange.value;
     syncAnchorOptions(null);
@@ -1022,6 +1064,7 @@ function renderCurrentPlan(plan) {
   seatCountValue.textContent = String(displayPlan.controls.seatCount);
   tableCountControl.hidden = !tableScenario;
   syncPhotoOrientationControl();
+  syncPlanLayoutControl();
   tableCountRange.max = String(maxTableCount);
   if (Number(tableCountRange.value) > maxTableCount) {
     tableCountRange.value = String(maxTableCount);
@@ -1047,9 +1090,10 @@ function renderCurrentPlan(plan) {
 
   if (state.scenario === "photo") {
     const orientation = getPhotoOrientationMeta();
-    scenarioCopy.textContent = `${scenarioMeta.copy} ${orientation.description}`;
+    const layout = getPlanLayoutMeta();
+    scenarioCopy.textContent = `${scenarioMeta.copy} ${orientation.description} ${layout.description}`;
   } else {
-    scenarioCopy.textContent = tablePlan?.effectiveTableCount
+    const tableCopy = tablePlan?.effectiveTableCount
       ? t("tableScenarioShown", {
         copy: scenarioMeta.copy,
         count: tablePlan.effectiveTableCount,
@@ -1057,6 +1101,7 @@ function renderCurrentPlan(plan) {
         plural: pluralSuffix(tablePlan.effectiveTableCount),
       })
       : scenarioMeta.copy;
+    scenarioCopy.textContent = `${tableCopy} ${getPlanLayoutMeta().description}`;
   }
 
   if (overflowSeats.length) {
@@ -1103,29 +1148,66 @@ function renderCurrentPlan(plan) {
 function createPhotoCardMarkup(entry, isHead = false) {
   if (!entry) {
     return `
-      <span class="plan-seat-card-label">${isHead ? t("headRank1") : t("openSlot")}</span>
-      <strong>${t("open")}</strong>
-      <small>${isHead ? t("awaitingHeadAssignment") : t("awaitingAssignment")}</small>
+      <div class="photo-seat-content">
+        <span class="plan-seat-card-label">${isHead ? t("headRank1") : t("openSlot")}</span>
+        <strong>${t("open")}</strong>
+        <small>${isHead ? t("awaitingHeadAssignment") : t("awaitingAssignment")}</small>
+      </div>
     `;
   }
 
+  const nameVariants = buildPhotoNameVariants(entry.name);
   const label = isHead ? t("headRank1") : t("rankLabel", { rank: entry.rankOrder });
   const detail = t("seatDetail", {
     seat: entry.seat,
     detail: entry.title || getCategoryText(entry.category, entry.categoryLabel),
   });
   return `
-    <span class="plan-seat-card-label">${escapeHtml(label)}</span>
-    <strong>${escapeHtml(entry.name)}</strong>
-    <small>${escapeHtml(detail)}</small>
+    <div class="photo-seat-content">
+      <span class="plan-seat-card-label">${escapeHtml(label)}</span>
+      <strong class="photo-name">
+        <span class="photo-name-full">${escapeHtml(nameVariants.full)}</span>
+        <span class="photo-name-compact">${escapeHtml(nameVariants.compact)}</span>
+        <span class="photo-name-tight">${escapeHtml(nameVariants.tight)}</span>
+      </strong>
+      <small>${escapeHtml(detail)}</small>
+    </div>
   `;
 }
 
 function createPhotoCard(entry, isMock, isHead = false) {
   const card = document.createElement("article");
   card.className = `plan-seat-square photo-seat${isHead ? " plan-seat-square--anchor" : ""}${entry ? "" : " plan-seat-square--empty"}${isMock && entry ? " plan-seat-square--mock" : ""}`;
+  if (entry?.name) {
+    card.title = entry.name;
+    card.setAttribute("aria-label", entry.name);
+  }
   card.innerHTML = createPhotoCardMarkup(entry, isHead);
   return card;
+}
+
+function normalizePhotoDisplayName(name = "") {
+  const normalized = String(name)
+    .replace(/\b(MH|JP|BBS|SBS|GBS|OBE|MBE)\b/gi, "")
+    .replace(/^((senator|dr|mr|mrs|ms|prof|professor)\.?\s+)+/i, "")
+    .replace(/\s*,\s*/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return normalized || String(name).trim();
+}
+
+function buildPhotoNameVariants(name = "") {
+  const full = normalizePhotoDisplayName(name);
+  const parts = full.split(" ").filter(Boolean);
+
+  if (parts.length <= 1) {
+    return { full, compact: full, tight: full };
+  }
+
+  const compact = parts.length > 2 ? `${parts[0]} ${parts.at(-1)}` : full;
+  const tight = `${parts[0].charAt(0)}. ${parts.at(-1)}`;
+  return { full, compact, tight };
 }
 
 function createPhotoSpacer(kind = "side") {
@@ -1177,15 +1259,48 @@ function renderPhotoScenario(seatedEntries, isMock) {
   const photoLayout = buildPhotoLayout(seatedEntries, Math.max(1, seatedEntries.length));
   const leftEntries = photoLayout.rows.flatMap((row) => row.left);
   const rightEntries = photoLayout.rows.flatMap((row) => row.right);
-  const flankSlots = Math.max(leftEntries.length, rightEntries.length, 1);
-  const totalColumns = flankSlots * 2 + 1;
   const board = document.createElement("section");
-  board.className = "photo-board";
+  board.className = `photo-board photo-board--${state.planLayout}`;
+  const planStack = document.createElement("div");
+  planStack.className = "photo-board-stack";
   const mirrored = state.photoOrientation === "from_audience";
   const orientation = getPhotoOrientationMeta();
   const orientationBadge = document.createElement("div");
   orientationBadge.className = "photo-orientation-badge";
   orientationBadge.textContent = orientation.label;
+  if (state.planLayout === "vertical") {
+    const topEntries = mirrored ? [...rightEntries].reverse() : [...leftEntries].reverse();
+    const bottomEntries = mirrored ? [...leftEntries] : [...rightEntries];
+
+    topEntries.forEach((entry) => {
+      const seatRow = document.createElement("div");
+      seatRow.className = "photo-row photo-row--vertical";
+      seatRow.style.setProperty("--photo-columns", "1");
+      seatRow.append(createPhotoCard(entry, isMock));
+      planStack.append(seatRow);
+    });
+
+    const anchorRow = document.createElement("div");
+    anchorRow.className = "photo-row photo-row--anchor";
+    anchorRow.style.setProperty("--photo-columns", "1");
+    anchorRow.append(photoLayout.head ? createPhotoCard(photoLayout.head, isMock, true) : createPhotoSpacer("axis"));
+    planStack.append(anchorRow);
+
+    bottomEntries.forEach((entry) => {
+      const seatRow = document.createElement("div");
+      seatRow.className = "photo-row photo-row--vertical";
+      seatRow.style.setProperty("--photo-columns", "1");
+      seatRow.append(createPhotoCard(entry, isMock));
+      planStack.append(seatRow);
+    });
+
+    board.append(orientationBadge, planStack);
+    centerSeatPlan.append(board);
+    return;
+  }
+
+  const flankSlots = Math.max(leftEntries.length, rightEntries.length, 1);
+  const totalColumns = flankSlots * 2 + 1;
   const lineRow = document.createElement("div");
   const stageFacingLeftCells = [...Array(Math.max(flankSlots - leftEntries.length, 0)).fill(null), ...[...leftEntries].reverse()];
   const stageFacingRightCells = [...rightEntries, ...Array(Math.max(flankSlots - rightEntries.length, 0)).fill(null)];
@@ -1207,13 +1322,14 @@ function renderPhotoScenario(seatedEntries, isMock) {
     lineRow.append(entry ? createPhotoCard(entry, isMock) : createPhotoSpacer());
   });
 
-  board.append(orientationBadge, lineRow);
+  planStack.append(lineRow);
+  board.append(orientationBadge, planStack);
   centerSeatPlan.append(board);
 }
 
 function renderCircularScenario(tablePlan, isMock) {
   const layout = document.createElement("section");
-  layout.className = "table-layout table-layout--circular";
+  layout.className = `table-layout table-layout--circular table-layout--${state.planLayout}`;
   applyTableLayoutMetrics(layout, tablePlan);
 
   tablePlan.groups.forEach((group, index) => {
@@ -1303,7 +1419,7 @@ function createLongTableBoard(seatedEntries, isMock) {
 
 function renderLongTableScenario(tablePlan, isMock) {
   const layout = document.createElement("section");
-  layout.className = "table-layout table-layout--long";
+  layout.className = `table-layout table-layout--long table-layout--${state.planLayout}`;
   applyTableLayoutMetrics(layout, tablePlan);
 
   tablePlan.groups.forEach((group, index) => {
@@ -1354,6 +1470,7 @@ function rerenderLocalizedSurfaces() {
   updateStaticTranslations();
   updateManualRowTranslations();
   refreshStoredStatuses();
+  syncPlanLayoutControl();
 
   if (state.lastPlan) {
     renderSummary(state.lastPlan);
@@ -1470,6 +1587,13 @@ photoOrientationToggle.addEventListener("click", () => {
   persistAppState();
 });
 
+planLayoutToggle.addEventListener("click", () => {
+  state.planLayout = state.planLayout === "horizontal" ? "vertical" : "horizontal";
+  syncPlanLayoutControl();
+  renderCurrentPlan(state.lastPlan);
+  persistAppState();
+});
+
 anchorPersonSelect.addEventListener("change", () => {
   state.anchorSelection = anchorPersonSelect.value;
   const nextPlan = buildPlanFromState();
@@ -1514,5 +1638,6 @@ if (state.lastPlan) {
 }
 syncAnchorOptions(state.lastPlan);
 syncPhotoOrientationControl();
+syncPlanLayoutControl();
 renderCurrentPlan(state.lastPlan);
 persistAppState();
